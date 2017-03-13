@@ -40,10 +40,8 @@ namespace updateDataSources
                 string code = entry.ChildNodes[0].InnerText;
                 string literal = entry.ChildNodes[1].InnerText;
                 string[] splitLiteral = literal.Split(' ');
-                for(int i = 2; i < splitLiteral.Length; i++)
+                for(int i = 2; i < splitLiteral.Length-1; i++)
                 {
-                    if (i == splitLiteral.Length - 1)
-                        break;
                     if(splitLiteral[0]+splitLiteral[1] == splitLiteral[i]+splitLiteral[i+1])
                     {
                         CustomLogger.Trace(string.Format("There is a statute literal duplicated:\nCode - {0}\nLiteral - {1}\n", code, literal));
